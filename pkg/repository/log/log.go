@@ -31,6 +31,12 @@ func (p *Repository) FindByID(id uint) (*model.Log, error){
 	return log, err
 }
 
+//Insert
+func (p *Repository) Create(log *model.Log) (*model.Log, error) {
+	err := p.db.Create(&log).Error
+	return log, err
+}
+
 //Save
 func (p *Repository) Save(log *model.Log) (*model.Log, error) {
 	err := p.db.Save(&log).Error

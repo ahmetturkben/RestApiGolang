@@ -2,7 +2,7 @@ package service
 
 import(
 	"LogPushService/pkg/model"
-	"LogPushService/pkg/repository/logrepo"
+	"LogPushService/pkg/repository/log"
 )
 
 //logService
@@ -23,6 +23,11 @@ func (l *LogService) All() ([]model.Log, error) {
 // FindByID ...
 func (l *LogService) FindByID(id uint) (*model.Log, error) {
 	return l.LogRepository.FindByID(id)
+}
+
+// Insert 
+func (l *LogService) Create(log *model.Log) (*model.Log, error) {
+	return l.LogRepository.Create(log)
 }
 
 // Save ...
