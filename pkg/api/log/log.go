@@ -1,9 +1,9 @@
-package api
+package logapi
 
 import(
 	"net/http"
-	"LogPushService/pkg/service"
-	"LogPushService/pkg/model"
+	"RestApiGolang/pkg/service/log"
+	"RestApiGolang/pkg/model/log"
 	"github.com/gorilla/mux"
 	"log"
 	"fmt"
@@ -13,11 +13,11 @@ import(
 
 // PostAPI ...
 type LogAPI struct {
-	LogService service.LogService
+	LogService logservice.LogService
 }
 
 // NewPostAPI ...
-func NewLogAPI(l service.LogService) LogAPI{
+func NewLogAPI(l logservice.LogService) LogAPI{
 	return LogAPI{LogService: l}
 }
 

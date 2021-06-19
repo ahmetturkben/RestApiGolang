@@ -9,13 +9,13 @@ import(
 	//"gorm.io/driver/sqlserver"
 	"gorm.io/gorm"
 	"gorm.io/driver/postgres"
-	"LogPushService/pkg/api"
-	"LogPushService/pkg/repository/log"
-	"LogPushService/pkg/service"
+	"RestApiGolang/pkg/api/log"
+	"RestApiGolang/pkg/repository/log"
+	"RestApiGolang/pkg/service/log"
 
-	// "LogPushService/pkg/api/user"
-	"LogPushService/pkg/repository/user"
-	// "LogPushService/pkg/service"
+	"RestApiGolang/pkg/api/user"
+	"RestApiGolang/pkg/repository/user"
+	"RestApiGolang/pkg/service/user"
 )
 
 type App struct {
@@ -28,11 +28,11 @@ func main() {
 
 	// Initialize routes
 	a.initialize(
-		"ahmetturkben/sqlexpress",
-		"4096",
-		"testuser",
-		"12345678",
-		"ShoppingCart")
+		"",
+		"",
+		"",
+		"",
+		"")
 		a.routes()
 
 	// Start server
@@ -76,19 +76,19 @@ func (a *App) routes() {
 }
 
 // InitLogAPI ..
-func InitLogAPI(db *gorm.DB) api.LogAPI {
+func InitLogAPI(db *gorm.DB) logapi.LogAPI {
 	logRepository := logrepo.NewRepository(db)
-	logService := service.NewLogService(logRepository)
-	logAPI := api.NewLogAPI(logService)
+	logService := logservice.NewLogService(logRepository)
+	logAPI := logapi.NewLogAPI(logService)
 	logAPI.Migrate()
 	return logAPI
 }
 
 // InitUserAPI
-func InitUserAPI(db *gorm.DB) api.UserAPI {
+func InitUserAPI(db *gorm.DB) userapi.UserAPI {
 	userRepository := userrepo.NewRepository(db)
-	userService := service.NewUserService(userRepository)
-	userAPI := api.NewUserAPI(userService)
+	userService := userservice.NewUserService(userRepository)
+	userAPI := userapi.NewUserAPI(userService)
 	userAPI.Migrate()
 	return userAPI
 }

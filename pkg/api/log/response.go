@@ -1,4 +1,4 @@
-package api
+package logapi
 
 import (
 	"encoding/json"

@@ -1,7 +1,7 @@
 package userrepo
 
 import(
-	"LogPushService/pkg/model"
+	"RestApiGolang/pkg/model/user"
 	"gorm.io/gorm"
 )
 

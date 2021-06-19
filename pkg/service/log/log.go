@@ -1,8 +1,8 @@
-package service
+package logservice
 
 import(
-	"LogPushService/pkg/model"
-	"LogPushService/pkg/repository/log"
+	"RestApiGolang/pkg/model/log"
+	"RestApiGolang/pkg/repository/log"
 )
 
 //logService

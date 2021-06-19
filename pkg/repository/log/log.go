@@ -1,7 +1,7 @@
 package logrepo
 
 import(
-	"LogPushService/pkg/model"
+	"RestApiGolang/pkg/model/log"
 	"gorm.io/gorm"
 )
 

@@ -1,8 +1,8 @@
-package service
+package userservice
 
 import(
-	"LogPushService/pkg/model"
-	"LogPushService/pkg/repository/user"
+	"RestApiGolang/pkg/model/user"
+	"RestApiGolang/pkg/repository/user"
 )
 
 //userService
