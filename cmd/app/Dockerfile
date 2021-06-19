@@ -1,6 +1,6 @@
 FROM golang:1.16.5
 
-ARG BRANCH=master
+ARG BRANCH=main
 
 RUN git clone –single-branch –branch ${BRANCH} https://github.com/ahmetturkben/RestApiGolang.git
 
