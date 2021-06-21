@@ -11,12 +11,12 @@ import(
 	"encoding/json"
 )
 
-// PostAPI ...
+// UserAPI ...
 type UserAPI struct {
 	UserService userservice.UserService
 }
 
-// NewPostAPI ...
+// NewUserAPI ...
 func NewUserAPI(u userservice.UserService) UserAPI{
 	return UserAPI{UserService: u}
 }
@@ -58,7 +58,7 @@ func (u UserAPI) FindByID() http.HandlerFunc {
 	}
 }
 
-// CreatePost ...
+// Create
 func (u UserAPI) CreateUser() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var UserDTO model.UserDto
